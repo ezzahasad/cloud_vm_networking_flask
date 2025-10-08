@@ -23,7 +23,7 @@ This screenshot shows the creation and configuration of the virtual machine on G
 
 ### Step 2: Networking (Port 5003 Open)  
 This screenshot shows the networking settings with port 5003 open to allow Flask web traffic.  
-![Step 2](screenshots/creating vm flask 3.png)
+![Networking](screenshots/creating vm flask 3.png)
 
 
 ### Step 3: OS Update + Python Install
