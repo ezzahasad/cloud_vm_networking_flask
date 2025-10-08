@@ -7,6 +7,7 @@
 
 ## Video recording: 
 - Zoom/Loom: Loom
+https://www.loom.com/share/dd7b51a695c54a3cb11f0c12d068f591?sid=0b3a55a1-aea3-4d14-809e-314edae776fb
 
 ## Steps
 ### 1. VM Creation
@@ -38,8 +39,11 @@ URL: http://34.44.114.108:5003
 ![VM_running](screenshots/vmrunning.png)
 
 ### 6. (Bonus) Domain Name
-Domain: http://mydomain.tech:5003  
-[screenshot]
+Custom domain was created using Namecheap through the GitHub Student Developer Pack and then linked to my Google Cloud VM by adding an A record for my external IP (34.71.119.8) as well as the CNAME for www redirection. This external IP address matches the configuration shown in the loom video. 
+Domain: http://cloudflaskproject.me:5003/ 
+![flask_domain](screenshots/flask_domain.png)
+![creating_domain](screenshots/creating_domain.png)
+![stopping_VM](screenshots/stopping_VM_machine.png)
 
 ### Summary
 In this project, I successfully deployed a Flask web application on a Google Cloud Virtual Machine. The process included creating a VM instance, configuring firewall rules to open port 5003, updating the operating system, and installing Python, pip, Git, and venv in the correct order. 
