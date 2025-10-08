@@ -17,16 +17,14 @@
 
 ### Step 1: VM Creation  
 This screenshot shows the creation and configuration of the virtual machine on Google Cloud.  
-![screenshots/creating vm flask 2.png)
-![screenshots/creating vm flask.png)
+![Creating VM Flask 2](screenshots/creating vm flask 2.png)
 
 ---
 
 ### Step 2: Networking (Port 5003 Open)  
 This screenshot shows the networking settings with port 5003 open to allow Flask web traffic.  
-![screenshots/creating vm flask 3.png)
+![Step 2](screenshots/creating vm flask 3.png)
 
----
 
 ### Step 3: OS Update + Python Install
 Below are the main commands I used to update the system and install the required tools.
@@ -41,8 +39,11 @@ sudo apt install python3.13-venv python3-pip -y
 ![screenshots/sudo apt upgrade.png)
 ![iscreenshots/install require tools (python, git, pip, venv).png)
 
+### Step 2: Networking (Port 5003 Open)
 
-### Step 4: Flask App Running 
+This screenshot shows the networking settings with port 5003 open to allow Flask web traffic.
+
+![screenshots/creating vm flask 3.png)
 After installing Python, pip, and Git, I cloned the Flask Starter repository and set up a virtual environment. I then installed all required dependencies and ran the Flask application.
 
 ![screenshots/updates_installation.png)
