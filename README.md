@@ -1,62 +1,46 @@
-# cloud_vm_networking_flask
 
-### AHI 504 — Assignment 2  
-**Deploying a Flask Web App on a Google Cloud VM**
+# Flask on Cloud VM (Assignment 2)
 
----
+## Student Info
+- Name:  Ezzah Asad
+- Cloud Provider:  Google Cloud Platform (GCP)
 
-### Student Information
-- **Name:** Ezzah Asad  
-- **Cloud Provider:** Google Cloud Platform  
-- **Video Recording:** Loom  
-
-
----
+## Video recording: 
+- Zoom/Loom: Loom
 
 ## Steps
+### 1. VM Creation
+Selected the **e2-micro machine type (2 vCPU, 1 GB memory)** and the **Ubuntu 25.04 Minimal** OS image. 
 
-### Step 1: VM Creation  
-This screenshot shows the creation and configuration of the virtual machine on Google Cloud.  
-![Creating VM Flask 2](screenshots/creating vm flask 2.png)
-
----
-
-### Step 2: Networking (Port 5003 Open)  
-This screenshot shows the networking settings with port 5003 open to allow Flask web traffic.  
-![Networking](screenshots/creating vm flask 3.png)
+![VM_Creation_1](screenshots/creatingvmflask.png)
+![VM_Creation_2](screenshots/creatingvmflask_2.png)
 
 
-### Step 3: OS Update + Python Install
-Below are the main commands I used to update the system and install the required tools.
+### 2. Networking (Port 5003 Open)
+ Displays the **networking configuration** for the VM. Enabled **Allow HTTP traffic** and **Allow HTTPS traffic** to permit web requests to the Flask app.  **network interface section**, the primary internal IP and the external IP: **ephemeral** was set at default. 
+![Networking_screenshot](screenshots/creatingvmflask3.png)
 
-```bash
-sudo apt update -y  
-sudo apt upgrade -y  
-sudo apt install git -y  
-sudo apt install python3.13 -y  
-sudo apt install python3.13-venv python3-pip -y
+### 3. OS Update + Python Install
+OS and development tools setup process:
+Updated and upgraded all Ubuntu packages.
+Installed Git, Python 3.13, pip, and venv — in that order to prevent dependency errors and ensured the environment was fully configured for Flask deployment.
+![OS_Update](screenshots/sudo_apt_upgrade.png)
+![Python_Install](screenshots/installrequiretools.png)
 
-![screenshots/sudo apt upgrade.png)
-![iscreenshots/install require tools (python, git, pip, venv).png)
+### 4. Flask App Running
+Flask app running on port 5003 inside the SSH terminal.
+![screenshot of terminal + browser](screenshots/updates_installation.png)
+![flask_running](screenshots/flask_running.png)
 
-### Step 2: Networking (Port 5003 Open)
+### 5. Public IP Access
+Confirming that the Flask app is accessible through the VM’s public IP address in a web browser.
+URL: http://34.44.114.108:5003 
+![VM_running](screenshots/vmrunning.png)
 
-This screenshot shows the networking settings with port 5003 open to allow Flask web traffic.
+### 6. (Bonus) Domain Name
+Domain: http://mydomain.tech:5003  
+[screenshot]
 
-![screenshots/creating vm flask 3.png)
-After installing Python, pip, and Git, I cloned the Flask Starter repository and set up a virtual environment. I then installed all required dependencies and ran the Flask application.
-
-![screenshots/updates_installation.png)
-![screenshots/flask running.png)
-
-```bash
-git clone https://github.com/hantswilliams/HHA-504-2025-FlaskStarter.git  
-cd HHA-504-2025-FlaskStarter  
-python3 -m venv venv  
-source venv/bin/activate  
-pip install -r requirements.txt  
-python3 app.py
-
-5. Public IP Access
-URL: http://34.44.114.108:5003
-[screenshots/flask running.png]
+### Summary
+In this project, I successfully deployed a Flask web application on a Google Cloud Virtual Machine. The process included creating a VM instance, configuring firewall rules to open port 5003, updating the operating system, and installing Python, pip, Git, and venv in the correct order. 
+I initially encountered several errors when running pip and Flask due to missing dependencies and incorrect installation order. To fix this, I recreated my machine multiple times and carefully reorganized my SSH commands. I started with system updates and then installing the required packages one by one. Once the environment was properly set up, the Flask application launched successfully and was accessible via my public IP address.
